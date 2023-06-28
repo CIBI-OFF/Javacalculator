@@ -135,6 +135,7 @@ public class Calculator implements ActionListener {
         new Calculator();
     }
 
+    // show numbers in input field
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == button0) {
@@ -181,6 +182,7 @@ public class Calculator implements ActionListener {
 
             displaylabel.setText(displaylabel.getText().concat("."));
         }
+        // bod-mas arithmetic operation
         if (e.getSource() == buttonAdd || e.getSource() == buttonMinus ||
                 e.getSource() == buttonMultiply || e.getSource() == buttonDivide ||
                 e.getSource() == buttonEquals) {
@@ -200,6 +202,7 @@ public class Calculator implements ActionListener {
                 firstInput = currentInput;
             }
 
+            // equal button
             if (e.getSource() == buttonEquals) {
                 displaylabel.setText(String.valueOf(firstInput));
                 operation = "";
@@ -209,6 +212,7 @@ public class Calculator implements ActionListener {
             }
         }
 
+            // delete button
         if (e.getSource() == buttonDelete) {
             displaylabel.setForeground(Color.WHITE);
             String del = displaylabel.getText();
@@ -216,7 +220,7 @@ public class Calculator implements ActionListener {
                 displaylabel.setText(del.substring(0, del.length() - 1));
             }
         }
-
+            // clear button
         if (e.getSource() == buttonClear) {
             displaylabel.setText("");
             firstInput = 0.0;
@@ -225,6 +229,7 @@ public class Calculator implements ActionListener {
             displaylabel.setForeground(Color.WHITE);
         }
     }
+        // arithmetic calculation
     private double calculate(double firstInput, double secondInput, String operation) {
         switch (operation) {
             case "+":
