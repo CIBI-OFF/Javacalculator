@@ -242,7 +242,6 @@ public class Calculator implements ActionListener {
                     return firstInput / secondInput;
                 } else {
                     displaylabel.setForeground(Color.red);
-                    displaylabel.setText("zero");
                     return 0;
                 }
             default:
